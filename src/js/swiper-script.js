@@ -1,5 +1,8 @@
 // init Swiper:
-const brandSwiper = new Swiper('.brands__swiper', {
+
+import Swiper from 'swiper'
+
+new Swiper('.brands__swiper', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -16,7 +19,7 @@ const brandSwiper = new Swiper('.brands__swiper', {
         }
     }
 });
-const gadgetSwiper = new Swiper('.gadgets__swiper', {
+new Swiper('.gadgets__swiper', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -24,10 +27,6 @@ const gadgetSwiper = new Swiper('.gadgets__swiper', {
     slidesPerView: 'auto',
     spaceBetween: 16,
     slidesOffsetAfter: 64,
-    // autoplay: {
-    //     delay: 1500,
-    //     disableOnInteraction: false,
-    // },
     breakpoints: {
         768: {
             spaceBetween: 24,
@@ -37,7 +36,7 @@ const gadgetSwiper = new Swiper('.gadgets__swiper', {
         }
     }
 });
-const priceSwiper = new Swiper('.price-swiper', {
+new Swiper('.price-swiper', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -45,10 +44,6 @@ const priceSwiper = new Swiper('.price-swiper', {
     slidesPerView: 'auto',
     spaceBetween: 16,
     slidesOffsetAfter: 64,
-    // autoplay: {
-    //     delay: 1500,
-    //     disableOnInteraction: false,
-    // },
     breakpoints: {
         768: {
             spaceBetween: 24,

@@ -47,7 +47,7 @@ module.exports = {
         hot: isDev
     },
     // Source maps для удобства отладки
-    devtool: isDev ? 'source-map' : '',
+    devtool: isDev ? 'source-map' : false,
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html',
@@ -90,6 +90,14 @@ module.exports = {
                     }
                 }
             }, 
+            //Подключаем стили свайпера
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
 
             // Компилируем SCSS в CSS
             {
