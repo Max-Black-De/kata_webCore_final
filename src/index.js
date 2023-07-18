@@ -1,5 +1,4 @@
-import '../node_modules/swiper/swiper-bundle.min.css';
-// import 'swiper/css'
+import '../node_modules/swiper/swiper-bundle.css'
 import './scss/style.scss';
 import './js/call-modal.js';
 import './js/feedback-modal.js';

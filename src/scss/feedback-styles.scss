@@ -1,4 +1,5 @@
 $var1: #ffffff;
+$whiteOpacity: rgba(255, 255, 255, 0.9);
 $var2: #34495e;
 $var3: #41F6D7;
 $var4: #1B1C21;
@@ -10,7 +11,7 @@ $var9: #FF3E79;
 
 .feedback {
 	z-index: 10;
-	background-color: $var1;
+	background-color: $whiteOpacity;
 	position: fixed;
 	top: 0;
 	left: 0;

@@ -16,26 +16,6 @@ button {
 	all: unset;
 	cursor: pointer;
 }
-// @font-face {
-// 	font-family: 'TT Lakes';
-// 	font-weight: 500;
-// 	font-style: normal;
-// 	src: local("TT Lakes"),
-//         url("../fonts/TTLakes-Medium.woff") format("woff"),
-//         url("../fonts/TTLakes-Medium.ttf") format("ttf");
-// 	font-family: 'TT Lakes';
-// 	font-weight: normal;
-// 	font-style: normal;
-// 	src: local("TT Lakes"),
-//         url("../fonts/TTLakes-Regular.woff") format("woff"),
-//         url("../fonts/TTLakes-Regular.ttf") format("ttf");
-// 	font-family: 'TT Lakes';
-// 	font-weight: bold;
-// 	font-style: normal;
-// 	src: local("TT Lakes"),
-//         url("../fonts/TTLakes-Bold.woff") format("woff"),
-//         url("../fonts/TTLakes-Bold.ttf") format("ttf");
-// }
 .application {
 	min-width: 320px;
 }
@@ -52,7 +32,6 @@ button {
 		padding-top: 24px;
 	}
 }
-
 .buttons-block {
 	display: flex;
 	justify-content: space-around;
@@ -114,9 +93,7 @@ button {
 		left: 0;
 		width: 4px;
 		height: 40px;
-		// border-radius: 0 12px 12px 0 ;
 		border-radius: 0 12px 12px 0 / 0 10px 10px 0;
-
 	}
 }
 .links-block__list {
@@ -148,7 +125,7 @@ button {
 	font-size: 16px;
 	letter-spacing: -0.2px;
 	cursor: pointer;
-	&:hover {					//проверить потом работает ли, если что вынести отдельно
+	&:hover {
 		border-radius: 6px;
 		background-color: $var2;
 	}
@@ -223,7 +200,6 @@ button {
 	.hidden {
 		display: flex;
 	}
-
 	.buttons-block {
 		justify-content: space-around;
 		align-items: center;
@@ -232,29 +208,23 @@ button {
 			padding: 0;
 		}
 	}
-
 	.buttons__middle-side {
 		flex: auto;
 	}
-
 	.divider-container {
 		font-size: 36px;
 		padding: 0 20px;
 		flex: 0 auto;
 	}
-
 	.apper-side {
 		padding-left: 24px;
 	}
-
 	.links-block__list {
 		padding: 32px 0;
 	}
-
 	.bottom-side {
 		padding-top: 32px;
 	}
-
 	.content {
 		display: flex;
 		flex-direction: row;

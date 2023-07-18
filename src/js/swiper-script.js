@@ -1,62 +1,62 @@
 // init Swiper:
 
-import Swiper from 'swiper'
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+const swiperBrand = new Swiper('.brands__swiper', {
+    modules: [Pagination],
+    pagination: {
+        el: '.brands__swiper-pagination',
+        clickable: true,
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    slidesOffsetAfter: 64,
+    breakpoints: {
+        768: {
+            spaceBetween: 24,
+        },
+        1120: {
+            spaceBetween: 32,
+        }
+    }
+});
+const swiperGadget = new Swiper('.gadgets__swiper', {
+    modules: [Pagination],
+    pagination: {
+        el: '.gadgets__swiper-pagination',
+        clickable: true,
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    slidesOffsetAfter: 64,
+    breakpoints: {
+        768: {
+            spaceBetween: 24,
+        },
+        1120: {
+            spaceBetween: 32,
+        }
+    }
+});
+const swiperPrice = new Swiper('.price__swiper', {
+    modules: [Pagination],
+    pagination: {
+        el: '.price__swiper-pagination',
+        clickable: true,
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    slidesOffsetAfter: 64,
+    breakpoints: {
+        768: {
+            spaceBetween: 24,
+        },
+        1120: {
+            spaceBetween: 32,
+        }
+    }
+});
 
-new Swiper('.brands__swiper', {
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    slidesOffsetAfter: 64,
-    breakpoints: {
-        768: {
-            spaceBetween: 24,
-        },
-        1120: {
-            spaceBetween: 32,
-        }
-    }
-});
-new Swiper('.gadgets__swiper', {
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    slidesOffsetAfter: 64,
-    breakpoints: {
-        768: {
-            spaceBetween: 24,
-        },
-        1120: {
-            spaceBetween: 32,
-        }
-    }
-});
-new Swiper('.price-swiper', {
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    slidesOffsetAfter: 64,
-    breakpoints: {
-        768: {
-            spaceBetween: 24,
-        },
-        1120: {
-            spaceBetween: 32,
-        }
-    }
-});
-
-const swiperBrand = document.querySelector('.brands__swiper').swiper;
-const swiperGadget = document.querySelector('.gadgets__swiper').swiper;
-const swiperPrice = document.querySelector('.price-swiper').swiper;
 
 const mql = window.matchMedia('(min-width: 768px)');
 

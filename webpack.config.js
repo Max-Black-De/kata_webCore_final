@@ -21,12 +21,11 @@ if (isProd) {
         new CssMinimizerWebpackPlugin()
     ]
 }
-
     return config
 }
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
-console.log('isDev:' + isDev)
+console.log('isDev:', isDev)
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -36,7 +35,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        // extensions: ['.js', 'css'],
+        // extensions: ['.js', 'css'],  //можно не указывать расширения
         alias: {
             //уменьшает длинные пути @styles
         }
@@ -53,7 +52,7 @@ module.exports = {
             template: './index.html',
             inject: true,
             minify: {
-                removeComments: true,
+                removeComments: isProd,
                 collapseWhitespace: isProd,
             }
         }),
@@ -94,8 +93,12 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
-                    'css-loader'
+                    MiniCssExtractPlugin.loader,
+                        // options: {
+                        //     hmr: isDev,
+                        //     reloadAll: true
+                        // }
+                        , 'css-loader'
                 ]
             },
 
@@ -103,7 +106,9 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader
+                    },
                     'css-loader',
                     'postcss-loader',
                     'sass-loader'

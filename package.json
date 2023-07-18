@@ -1,5 +1,5 @@
 {
-  "name": "web-last-block",
+  "name": "web-final-block",
   "version": "1.0.0",
   "description": "",
   "keywords": [
@@ -23,7 +23,7 @@
     "not OperaMini All",
     "not dead"
   ],
-  "author": "",
+  "author": "MaxShchip",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.22.9",

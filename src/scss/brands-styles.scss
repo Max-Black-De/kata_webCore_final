@@ -35,6 +35,12 @@ $var8: #1B1C21;
 	}
 	&__swiper {
 		max-height: 160px;
+		&-pagination-container{
+			margin-top: 16px;
+		}
+		&-pagination {
+			position: static;
+		}
 		&::after {
 			position: absolute;
 			right: 0px;
@@ -114,16 +120,10 @@ $var8: #1B1C21;
 	border-radius: 20%;
 	transform: rotate(45deg);
 }
-.pagination-container {
-	margin-top: 16px;
-}
-.swiper-pagination {
-	position: static;
-	&-bullet-active {
+.swiper-pagination-bullet {
+	background-color: $var7;
+	&-active {
 		background-color: $var6;
-	}
-	&-bullet {
-		background-color: $var7;
 	}
 }
 @media (min-width: 768px) {
@@ -134,9 +134,6 @@ $var8: #1B1C21;
         margin-top: 24px;
         display: inline-flex;
         align-items: center;
-    }
-    .pagination-container--hidden {
-        display: none;
     }
     .brands__wrapper {
 		margin: 32px 0 0 24px;

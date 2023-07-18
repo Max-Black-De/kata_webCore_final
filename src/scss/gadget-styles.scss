@@ -41,6 +41,12 @@ $var8: #DDDDDD;
 		display: flex;
 		box-sizing: content-box;
 	}
+	&__swiper-pagination-container {
+		margin-top: 16px;
+	}
+	&__swiper-pagination {
+		position: static;
+	}
 	&__swiper::after {
 		position: absolute;
 		right: 0px;
@@ -117,22 +123,6 @@ $var8: #DDDDDD;
 		transform: rotate(45deg);
 	}
 }
-.pagination-container {
-	margin-top: 16px;
-	&--hidden {
-		display: none;
-	}
-}
-.swiper-pagination {
-	position: static;
-	&-bullet-active {
-		background-color: $var7;
-	}
-	&-bullet {
-		background-color: $var8;
-	}
-}
-
 @media (min-width: 768px) {
 	.gadgets__content-hider-btn {
 		border: none;
@@ -161,9 +151,6 @@ $var8: #DDDDDD;
 		margin: 0 24px 16px 0;
 		max-width: 224px;
 	}
-	.pagination-container--hidden {
-			display: none;
-		}
 }
 @media (min-width: 1120px) {
 	.gadgets__wrapper {
