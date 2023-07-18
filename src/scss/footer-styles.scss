@@ -1,0 +1,40 @@
+.footer-text {
+    color: #7E7E82;
+    text-align: center;
+    font-size: 14px;
+    font-family: TT Lakes;
+    font-weight: 500;
+    line-height: 16px;
+    margin-bottom: 18px;
+    margin-top: 16px;
+}
+@media (min-width: 768px) {
+    .footer{
+        color: #7E7E82;
+        font-family: TT Lakes;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
+        &__content-wrapper {
+            display: flex;
+            margin: 0 24px;
+            padding: 0;
+            justify-content: space-between;
+        }
+        &__copywriter-info {
+            text-align: start;
+            max-width: 218px;
+        }
+        &__offert-info {
+            max-width: 213px;
+            text-align: end;
+        }
+    }
+}
+@media (min-width: 1120px) {
+    .footer__content-wrapper {
+        margin: 0 32px;
+        justify-content: space-between;
+    }
+}

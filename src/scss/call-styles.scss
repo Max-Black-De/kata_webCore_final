@@ -1,0 +1,137 @@
+$var1: #ffffff;
+$var2: #34495e;
+$var3: #41F6D7;
+$var4: #1B1C21;
+$var5: #EAEAEA;
+$var6: #FFFFFF;
+$var7: #B5B6BC;
+$var8: #7E7E82;
+$var9: #FF3E79;
+
+.call {
+	z-index: 10;
+	background-color: $var1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 320px;
+	width: 100%;
+	height: 100%;
+	justify-content: flex-end;
+	overflow-y: scroll;
+	&__container {
+		float: right;
+		height: 100%;
+		width: 100%;
+		background-color: $var1;
+		overflow: auto;
+		max-width: 320px;
+		box-shadow: 0px 0px 100px -20px $var2;
+		display: flex;
+		flex-direction: column;
+		padding: 24px 16px;
+	}
+	&__close-button-wrapper {
+		margin-bottom: 40px;
+	}
+	&__close-btn {
+		all: unset;
+		cursor: pointer;
+	}
+	&__tittle-wrapper {
+		display: flex;
+		align-items: center;
+		margin-bottom: 24px;
+		&::before {
+			content: "";
+			background-color: $var3;
+			display: flex;
+			position: absolute;
+			right: 316px;
+			width: 4px;
+			height: 40px;
+			border-radius: 0 12px 12px 0 / 0 10px 10px 0;;
+		}
+	}
+	&__tittle {
+		color: $var4;
+		font-family: TT Lakes;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 32px;
+		letter-spacing: -0.6px;
+	}
+	&__phone-input {
+		display: flex;
+		padding-left: 16px;
+		margin-bottom: 16px;
+		width: 100%;
+		height: 48px;
+		border-radius: 8px;
+		border: 1px solid $var5;
+		background: $var6;
+		color: $var7;
+		font-family: TT Lakes;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 24px;
+		letter-spacing: -0.2px;
+	}
+	&__inform-wrapper {
+		margin-bottom: 18px;
+	}
+	&__agreement {
+		color: $var8;
+		font-family: TT Lakes;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 16px;
+	}
+	&__personal-data-agreement, &__privacy-policy-agreement {
+		text-decoration: none;
+		color: $var9;
+	}
+	&__submit-button-wrapper {
+		float: right;
+		display: flex;
+		justify-content: flex-end;
+		cursor: pointer;
+		width: 136px;
+		border-radius: 16px;
+		background: $var9;
+	}
+	&__submit-input {
+		cursor: pointer;
+		width: 89.14px;
+		height: 32px;
+		border: none;
+		background: $var9;
+		color: $var6;
+		font-family: TT Lakes;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 24px;
+		letter-spacing: -0.15px;
+		text-transform: uppercase;
+	}
+}
+@media (min-width: 768px) {
+    .call__container {
+	padding: 40px 32px;
+	min-width: 440px;
+    }
+    .call__tittle-wrapper::before {
+        right: 436px;
+    }
+}
+@media (min-width: 1120px) {
+    .call__link-menu {
+	position: absolute;
+	top: 36px;
+	right: 472px;
+    }
+}
