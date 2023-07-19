@@ -37,7 +37,13 @@ $var5: #7E7E82;
 	&--static {
 		display: contents;
 	}
+	&--clickable-element:hover {
+		cursor: pointer;
+		opacity: 0.5;
+		transition: opacity 0.3s ease-in-out;
+	}
 }
+
 .menu-header__btn-wrapper {
 	display: flex;
 	align-items: center;
@@ -92,13 +98,6 @@ $var5: #7E7E82;
 		margin-right: 15px;
 	}
 }
-a {
-	text-decoration: none;
-	&:hover {
-		opacity: 0.5;
-		transition: opacity 0.3s ease-in-out;
-	}
-}
 .footer-contacts-block__text {
 	font-family: 'TT Lakes';
 	font-style: normal;
@@ -120,6 +119,7 @@ a {
 .footer-languages {
 	display: flex;
 	> p {
+		cursor: pointer;
 		margin-right: 10px;
 		font-family: 'TT Lakes';
 		font-weight: normal;

@@ -16,6 +16,9 @@ button {
 	all: unset;
 	cursor: pointer;
 }
+a {
+	text-decoration: none;
+}
 .application {
 	min-width: 320px;
 }
@@ -30,6 +33,10 @@ button {
 	&-info {
 		background-color: $var1;
 		padding-top: 24px;
+	}
+	&--clickable-element:hover {
+		opacity: 0.5;
+		transition: opacity 0.3s ease-in-out;
 	}
 }
 .buttons-block {

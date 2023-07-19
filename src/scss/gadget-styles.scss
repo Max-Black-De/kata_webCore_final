@@ -90,6 +90,11 @@ $var8: #DDDDDD;
 	&__checkbox:checked~.gadgets__content-hider-btn > .gadgets__arrows {
 		transform: rotate(180deg);
 	}
+	&--clickable-element:hover {
+		cursor: pointer;
+		opacity: 0.5;
+		transition: opacity 0.3s ease-in-out;
+	}
 }
 .service-type {
 	color: $var5;

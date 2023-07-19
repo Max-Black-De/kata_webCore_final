@@ -123,6 +123,7 @@ $var10: #DDDDDD;
 	}
 }
 .order-button {
+	cursor: pointer;
 	border: none;
 	border-radius: 16px;
 	background: $var7;
@@ -138,6 +139,10 @@ $var10: #DDDDDD;
 	line-height: 24px;
 	letter-spacing: -0.15px;
 	text-transform: uppercase;
+	&:hover {
+		opacity: 0.5;
+		transition: opacity 0.3s ease-in-out;
+	}
 }
 .inform-block {
 	margin-top: 16px;

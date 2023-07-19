@@ -35,10 +35,6 @@ $var9: #FF3E79;
 	&__close-button-wrapper {
 		margin-bottom: 40px;
 	}
-	&__close-btn {
-		all: unset;
-		cursor: pointer;
-	}
 	&__tittle-wrapper {
 		display: flex;
 		align-items: center;
@@ -96,20 +92,17 @@ $var9: #FF3E79;
 		line-height: 16px;
 	}
 	&__personal-data-agreement, &__privacy-policy-agreement {
-		text-decoration: none;
 		color: $var9;
 	}
 	&__submit-button-wrapper {
 		float: right;
 		display: flex;
 		justify-content: flex-end;
-		cursor: pointer;
 		width: 136px;
 		border-radius: 16px;
 		background: $var9;
 	}
 	&__submit-input {
-		cursor: pointer;
 		width: 89.14px;
 		height: 32px;
 		border: none;
@@ -122,6 +115,11 @@ $var9: #FF3E79;
 		line-height: 24px;
 		letter-spacing: -0.15px;
 		text-transform: uppercase;
+	}
+	&--clickable-element {
+		cursor: pointer;
+		opacity: 0.5;
+		transition: opacity 0.3s ease-in-out;
 	}
 }
 @media (min-width: 768px) {
