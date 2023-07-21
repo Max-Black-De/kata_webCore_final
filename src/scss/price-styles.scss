@@ -15,7 +15,7 @@ $var10: #DDDDDD;
 	flex-direction: column;
 	background: $var1;
 	&__wrapper {
-		margin: 24px 0 0 16px;
+		margin: 0 0 24px 16px;
 	}
 	&__header-title {
 		white-space: normal;
@@ -51,7 +51,7 @@ $var10: #DDDDDD;
 		display: flex;
 		box-sizing: content-box;
 	}
-	&::after {
+	&__swiper::after {
 		position: absolute;
 		right: 0px;
 		top: 0px;
@@ -179,7 +179,7 @@ $var10: #DDDDDD;
 }
 @media only screen and (min-width: 768px) {
     .price__wrapper {
-        margin: 32px 0 0 24px;
+        margin: 0 0 32px 24px;
     }
     .price__main-block {
         margin-top: 31px;
@@ -245,7 +245,7 @@ $var10: #DDDDDD;
 }
 @media only screen and (min-width: 1120px) {
     .price__wrapper {
-        margin: 50px 0 0 32px;
+        margin: 0 0 50px 32px;
     }
     .price__main-block {
 		margin-right: 32px;

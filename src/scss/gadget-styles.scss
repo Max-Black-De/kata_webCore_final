@@ -13,7 +13,7 @@ $var8: #DDDDDD;
 	flex-direction: column;
 	background: $var1;
 	&__wrapper {
-		margin: 24px 0 0 16px;
+		margin: 0 0 24px 16px;
 	}
 	&__tittle-wrapper {
 		background: linear-gradient(to right, $var1, $var4);
@@ -138,7 +138,7 @@ $var8: #DDDDDD;
 		align-items: center;
 	}
 	.gadgets__wrapper {
-		margin: 32px 0 0 24px;
+		margin: 0 0 32px 24px;
 	}
 	.gadgets__main-block {
 		margin-top: 24px;
@@ -159,7 +159,7 @@ $var8: #DDDDDD;
 }
 @media (min-width: 1120px) {
 	.gadgets__wrapper {
-		margin: 50px 0 0 32px;
+		margin: 0 0 50px 32px;
 	}
 	.gadgets__item {
 		margin: 0 32px 16px 0;

@@ -13,11 +13,10 @@ $var8: #1B1C21;
 	flex-direction: column;
 	background: $var1;
 	&__wrapper {
-		margin: 24px 0 0 16px;
+		margin: 0 0 24px 16px;
 	}
 	&__main-block {
 		min-width: 0px;
-		margin-top: 16px;
 	}
 	&__title {
 		white-space: normal;
@@ -142,7 +141,7 @@ $var8: #1B1C21;
         align-items: center;
     }
     .brands__wrapper {
-		margin: 32px 0 0 24px;
+		margin: 0 0 32px 24px;
 	}
 	.brands__list {
 		flex-wrap: wrap;
@@ -151,7 +150,7 @@ $var8: #1B1C21;
 		margin-top: 24px;
 	}
 	.brands__item {
-		margin-bottom: 16px;
+		margin-bottom: 24px;
 		max-width: 224px;
 	}
     .brands__swiper::after {
@@ -160,10 +159,10 @@ $var8: #1B1C21;
 }
 @media (min-width: 1120px) {
     .brands__wrapper {
-        margin: 50px 0 0 32px;
+        margin: 0 0 52px 32px;
     }
     .brands__item {
-        margin-bottom: 16px;
+		margin-bottom: 16px;
         max-width: 240px;
     }
 }

@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
@@ -15,24 +14,49 @@ const optimization = () => {
             chunks: 'all'
         }
     }
-if (isProd) {
-    config.minimizer = [
-        new TerserWebpackPlugin(),
-        new CssMinimizerWebpackPlugin()
-    ]
-}
+    if (isProd) {
+        config.minimizer = [
+            new TerserWebpackPlugin(),
+            new CssMinimizerWebpackPlugin()
+        ]
+    }
     return config
 }
+const babelOptions = () => {
+    const opts = {
+        presets: [
+            '@babel/preset-env',
+        ],
+        plugins: [
+            '@babel/plugin-proposal-class-properties  '
+        ]
+    }
+    return opts
+}
+const jsLoaders = () => {
+    const loaders = [
+        {
+            loader: 'babel-loader',
+            optons: babelOptions()
+        }
+    ]
+    if(isDev) {
+        loaders.push('elsint-loader')
+    }
+    return [
+        loaders
+    ]
+}
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
-
 console.log('isDev:', isDev)
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    entry: './index.js',
+    entry: ['@babel/polyfill', './index.js'], //
     output: {
         filename: filename('js'),
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
     resolve: {
         // extensions: ['.js', 'css'],  //можно не указывать расширения
@@ -40,13 +64,14 @@ module.exports = {
             //уменьшает длинные пути @styles
         }
     },
-    optimization: optimization( ),
+    optimization: optimization(),
     devServer: {
         port: 4200,
         hot: isDev
     },
     // Source maps для удобства отладки
     devtool: isDev ? 'source-map' : false,
+    
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html',
@@ -56,13 +81,12 @@ module.exports = {
                 collapseWhitespace: isProd,
             }
         }),
-        new CleanWebpackPlugin(),
-
+    
         // Кладем стили в отдельный файлик
         new MiniCssExtractPlugin({
             filename: filename('css'),
         }),
-
+    
         // Копируем картинки
         new CopyWebpackPlugin({
             patterns: [
@@ -70,13 +94,16 @@ module.exports = {
                     from: path.resolve(__dirname, './src/images'),
                     to: path.resolve(__dirname, 'dist/images'),
                 },
+                {
+                    from: path.resolve(__dirname, './src/fonts'),
+                    to: path.resolve(__dirname, 'dist/fonts'),
+                },
             ]
         })
     ],
 
     module: {
         rules: [
-
             // Транспилируем js с babel
             {
                 test: /\.js$/,
@@ -88,23 +115,28 @@ module.exports = {
                         presets: ['@babel/preset-env'],
                     }
                 }
-            }, 
+            },
+            // Eslint 
+            // {
+            //     test: /\.js$/,
+            //     exclude: /node_modules/,
+            //     use: [
+            //         'eslint-loader',
+            //         'babel-loader'
+            //     ]
+            // }, 
             //Подключаем стили свайпера
             {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                        // options: {
-                        //     hmr: isDev,
-                        //     reloadAll: true
-                        // }
-                        , 'css-loader'
+                    'css-loader'
                 ]
             },
 
             // Компилируем SCSS в CSS
             {
-                test: /\.s[ac]ss$/,
+                test: /\.(s[ac]ss)$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
@@ -115,15 +147,14 @@ module.exports = {
                 ],
             },
 
-            // Подключаем шрифты из css
-            {
-                test: /\.(eot|ttf|woff|woff2)$/,
-                use: [
-                    {
-                        loader: 'file-loader?name=./fonts/[name].[ext]'
-                    },
-                ]
-            },
+            // Переносим шрифты
+            // {
+            //     test: /\.(eot|ttf|woff|woff2)$/,
+            //     loader: 'file-loader',
+            //     options: {
+            //         name: '[name].[ext]'
+            //     }
+            // },
 
             // Подключаем картинки из css
             {

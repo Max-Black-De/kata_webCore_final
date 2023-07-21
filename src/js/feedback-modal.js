@@ -1,3 +1,4 @@
+import {app, menuModal, toggle} from './menu-modal.js'
 const feedbackModal = document.querySelector('.feedback')
 const openFeedbackBtn = document.querySelector('.footer-buttons-block__chat')
 const closeFeedbackBtn = document.querySelector('.feedback__close-btn')
@@ -6,8 +7,7 @@ const generalOpenFeedbackBtn= document.querySelector('.buttons__chat-button')
 openFeedbackBtn.addEventListener('click', () => {
     feedbackModal.style.display = 'flex'
     if (window.innerWidth < 1120) {
-        menuModal.classList.toggle('menu-modal')
-        menuModal.classList.toggle('menu-modal--none')
+        toggle(menuModal)
     }
     app.style.overflow = 'hidden'
 })
