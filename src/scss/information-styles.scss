@@ -30,9 +30,9 @@ a {
 
 .general {
 	background-color: $var1;
-	// font-family: $lakesRegular;
-	// font-weight: normal;
-	// font-style: normal;
+	font-family: $lakesRegular;
+	font-weight: normal;
+	font-style: normal;
 	&__navigation-header {
 		background-color: $var2;
 	}
@@ -91,8 +91,8 @@ a {
 	display: flex;
 	align-items: center;
 	font-family: $lakesBold;
-	// font-weight: bold;
-	// font-style: normal;
+	font-weight: bold;
+	font-style: normal;
 	font-size: 28px;
 	line-height: 40px;
 	letter-spacing: -0.6px;
@@ -127,7 +127,7 @@ a {
 	height: 40px;
 	font-family: $lakesMedium;
 	font-weight: 500;
-	// font-style: normal;
+	font-style: normal;
 	color: $var6;
 	white-space: nowrap;
 	display: flex;
@@ -162,8 +162,8 @@ a {
 		~ .content__read-more-btn:after {
 			content: "Читать далее";
 			font-family: $lakesMedium;
-			// font-weight: 500;
-			// font-style: normal;
+			font-weight: 500;
+			font-style: normal;
 			font-size: 16px;
 			line-height: 24px;
 			margin-left: 8px;
@@ -172,8 +172,8 @@ a {
 		&:checked ~ .content__read-more-btn:after {
 			content: "Скрыть тест";
 			font-family: $lakesMedium;
-			// font-weight: 500;
-			// font-style: normal;
+			font-weight: 500;
+			font-style: normal;
 			font-size: 16px;
 			line-height: 24px;
 			margin-left: 8px;
@@ -190,8 +190,8 @@ a {
 		line-height: 18px;
 		letter-spacing: 0.2px;
 		font-family: $lakesRegular;
-		// font-weight: normal;
-		// font-style: normal;
+		font-weight: normal;
+		font-style: normal;
 		font-size: 14px;
 		color: $var3;
 	}
@@ -264,8 +264,8 @@ a {
 			position: relative;
 			line-height: 20px;
 			font-family: $lakesMedium;
-			// font-weight: 500;
-			// font-style: normal;
+			font-weight: 500;
+			font-style: normal;
 		}
 	}
 }
